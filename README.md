@@ -1,5 +1,8 @@
+### DEVELOPED BY: S JAIGANESH
+### REGISTER NO: 212222240037
+### DATE:
+
 # Ex.No: 03   COMPUTE THE AUTO FUNCTION(ACF)
-Date: 
 
 ### AIM:
 To Compute the Auto Correlation Function (ACF) of the data for the first 35 lags to determine the model
@@ -18,7 +21,7 @@ import numpy as np
 import pandas as pd
 
 # Load the coffee sales data
-file_path = '/mnt/data/coffee_Sales.csv'  # Replace with your file path
+file_path = 'coffee_Sales.csv'  
 coffee_sales_data = pd.read_csv(file_path)
 
 # Extract the 'money' column (sales data)
@@ -46,6 +49,8 @@ plt.show()
 ```
 
 ### OUTPUT:
+![image](https://github.com/user-attachments/assets/91a4bd38-a745-433c-b5ee-153e9d2c5cab)
+
 
 ### RESULT:
  Thus, the python code for implementing the auto correlation function is executed successfully.  
