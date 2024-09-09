@@ -20,32 +20,33 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-# Load the coffee sales data
-file_path = 'coffee_Sales.csv'  
-coffee_sales_data = pd.read_csv(file_path)
+# Load the provided dataset
+file_path = '/mnt/data/MLTempDataset.csv'
+data = pd.read_csv(file_path)
 
-# Extract the 'money' column (sales data)
-sales_data = coffee_sales_data['money'].values
+# Extract the 'DAYTON_MW' column (data for analysis)
+data_values = data['DAYTON_MW'].values
 
 # Calculate mean and variance
-mean_sales = np.mean(sales_data)
-var_sales = np.var(sales_data)
+mean_data = np.mean(data_values)
+var_data = np.var(data_values)
 
 # Normalize the data (subtract mean and divide by standard deviation)
-normalized_sales = (sales_data - mean_sales) / np.sqrt(var_sales)
+normalized_data = (data_values - mean_data) / np.sqrt(var_data)
 
 # Compute the ACF for the first 35 lags
 lags = range(35)
-acf_values = [np.corrcoef(normalized_sales[:-lag], normalized_sales[lag:])[0, 1] if lag != 0 else 1 for lag in lags]
+acf_values = [np.corrcoef(normalized_data[:-lag], normalized_data[lag:])[0, 1] if lag != 0 else 1 for lag in lags]
 
 # Plot the ACF results
 plt.figure(figsize=(10, 6))
 plt.stem(lags, acf_values, use_line_collection=True)
-plt.title('Autocorrelation Function (ACF) for Coffee Sales')
+plt.title('Autocorrelation Function (ACF) for DAYTON_MW')
 plt.xlabel('Lag')
 plt.ylabel('ACF')
 plt.grid(True)
 plt.show()
+
 ```
 <br>
 <br>
@@ -53,7 +54,8 @@ plt.show()
 <br>
 
 ### OUTPUT:
-![image](https://github.com/user-attachments/assets/91a4bd38-a745-433c-b5ee-153e9d2c5cab)
+![image](https://github.com/user-attachments/assets/d9e50bcd-98e4-482c-95a8-45e7dbb3326d)
+
 
 
 ### RESULT:
