@@ -47,6 +47,10 @@ plt.ylabel('ACF')
 plt.grid(True)
 plt.show()
 ```
+<br>
+<br>
+<br>
+<br>
 
 ### OUTPUT:
 ![image](https://github.com/user-attachments/assets/91a4bd38-a745-433c-b5ee-153e9d2c5cab)
